@@ -1,18 +1,25 @@
 package com.worklog;
 
+import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
 public class Session {
-    private final long id;
-    private final LocalDateTime startTime;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private LocalDateTime startTime;
     private LocalDateTime stopTime;
 
-    public Session(long id, LocalDateTime startTime) {
-        this.id = id;
+    protected Session() {}
+
+    public Session(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
-    public long getId() { return id; }
+    public Long getId() { return id; }
     public LocalDateTime getStartTime() { return startTime; }
     public LocalDateTime getStopTime() { return stopTime; }
     public void setStopTime(LocalDateTime stopTime) { this.stopTime = stopTime; }
