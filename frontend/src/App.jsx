@@ -51,7 +51,7 @@ export default function App() {
           ))}
         </tbody>
       </table>
-      <footer className="version">v{__COMMIT_HASH__}</footer>
+      <footer className="version">v{__COMMIT_HASH__} · {__COMMIT_DATE__}</footer>
     </div>
   )
 }
