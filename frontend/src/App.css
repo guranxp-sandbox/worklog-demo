@@ -59,3 +59,10 @@ th {
 tr:last-child td {
   border-bottom: none;
 }
+
+.version {
+  margin-top: 24px;
+  text-align: right;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
