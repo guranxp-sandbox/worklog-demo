@@ -24,6 +24,14 @@ worklog/
 - **Before demo:** Start button is working end-to-end (BE + FE)
 - **During demo:** Add Stop button live to show Claude Code in action
 
+## Testing conventions
+Always write JUnit 5 unit tests for any new backend functionality. Follow these rules:
+- Use BDDMockito's `given`/`then` syntax (never `when`/`verify`)
+- Annotate each test with `@DisplayName`
+- Name tests using `Should...When...` pattern
+- Structure test body with `// Given`, `// When`, `// Then` comments
+- Place tests in `backend/src/test/java/com/worklog/`
+
 ## Key constraints
 - Frontend must be usable on mobile browser
 - Keep it simple — no auth, no database
