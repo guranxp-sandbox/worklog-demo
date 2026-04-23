@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
-const API = `${import.meta.env.VITE_API_URL || 'http://localhost:8080'}/api/sessions`
+const API = `${import.meta.env.VITE_API_URL ?? 'http://localhost:8080'}/api/sessions`
 
 function formatTime(iso) {
   if (!iso) return '—'

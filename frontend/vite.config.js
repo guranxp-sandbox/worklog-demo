@@ -12,6 +12,10 @@ export default defineConfig({
     __BUILD_TIME__: JSON.stringify(buildTime),
   },
   server: {
+    host: true,
     allowedHosts: true,
+    proxy: {
+      '/api': 'http://localhost:8080',
+    },
   },
 })
