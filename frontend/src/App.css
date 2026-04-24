@@ -27,7 +27,7 @@ h1 {
   padding: 16px;
   font-size: 1.2rem;
   font-weight: bold;
-  background: #ca8a04;
+  background: #16a34a;
   color: white;
   border: none;
   border-radius: 12px;
@@ -36,7 +36,7 @@ h1 {
 }
 
 .btn-start:hover {
-  background: #a16207;
+  background: #15803d;
 }
 
 table {
