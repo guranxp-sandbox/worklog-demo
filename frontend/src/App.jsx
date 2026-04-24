@@ -20,13 +20,31 @@ export default function App() {
     fetch(`${API}/start`, { method: 'POST' })
       .then(fetchSessions)
 
+  const handleStop = (id) =>
+    fetch(`${API}/${id}/stop`, { method: 'POST' })
+      .then(fetchSessions)
+
+  const hasActiveSession = sessions.some(s => !s.stopTime)
+
   return (
     <div className="app">
       <h1>Worklog</h1>
 
-      <button className="btn-start" onClick={handleStart}>
-        Start Work
-      </button>
+      <div className="btn-row">
+        <button className="btn-start" onClick={handleStart}>
+          Start Work
+        </button>
+        <button
+          className="btn-stop"
+          onClick={() => {
+            const active = sessions.find(s => !s.stopTime)
+            if (active) handleStop(active.id)
+          }}
+          disabled={!hasActiveSession}
+        >
+          Stop Work
+        </button>
+      </div>
 
       <table>
         <thead>
