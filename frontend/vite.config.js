@@ -15,7 +15,13 @@ export default defineConfig({
     host: true,
     allowedHosts: true,
     proxy: {
-      '/api': 'http://localhost:8080',
+      '/api': {
+        target: 'http://localhost:8080',
+        configure: (proxy) => {
+          proxy.on('proxyReq', (_, req) => console.log('[proxy]', req.method, req.url))
+          proxy.on('error', (err) => console.log('[proxy error]', err.message))
+        },
+      },
     },
   },
 })
