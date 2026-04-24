@@ -21,22 +21,43 @@ h1 {
   margin-bottom: 24px;
 }
 
-.btn-start {
-  display: block;
-  width: 100%;
+.btn-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.btn-start,
+.btn-stop {
+  flex: 1;
   padding: 16px;
   font-size: 1.2rem;
   font-weight: bold;
-  background: #eab308;
   color: white;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  margin-bottom: 32px;
+}
+
+.btn-start {
+  background: #dc2626;
 }
 
 .btn-start:hover {
-  background: #ca8a04;
+  background: #b91c1c;
+}
+
+.btn-stop {
+  background: #16a34a;
+}
+
+.btn-stop:hover:not(:disabled) {
+  background: #15803d;
+}
+
+.btn-stop:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
 }
 
 table {
