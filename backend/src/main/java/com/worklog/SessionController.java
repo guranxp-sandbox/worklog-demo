@@ -28,6 +28,7 @@ public class SessionController {
 
     @GetMapping
     public List<Session> getAll() {
+        log.info("Fetching all sessions");
         return repository.findAll();
     }
 }
